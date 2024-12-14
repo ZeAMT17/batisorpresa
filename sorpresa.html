@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sorpresa</title>
+  </head>
+  <body>
+    <canvas width="300" height="300" id="canvas"></canvas>
+    <button type="button" onclick="Batman()">Click</button>
+    <script>
+      function Batman() {
+        let d = document.getElementById("canvas");
+        let lienzo = d.getContext("2d");
+        lienzo.fillStyle = "#F7DCC7";
+        lienzo.fillRect(60, 100, 100, 80);
+
+        lienzo.fillStyle = "black";
+        lienzo.fillRect(60, 70, 100, 60);
+
+        lienzo.fillStyle = "white";
+        lienzo.fillRect(80, 95, 10, 10);
+
+        lienzo.fillStyle = "white";
+        lienzo.fillRect(110, 95, 10, 10);
+
+        lienzo.fillStyle = "white";
+        lienzo.fillRect(80, 140, 50, 5);
+
+        lienzo.fillStyle = "red";
+        lienzo.fillRect(90, 145, 40, 5);
+
+        lienzo.fillStyle = "black";
+        lienzo.fillRect(90, 145, 30, 5);
+
+        lienzo.beginPath();
+        lienzo.moveTo(90, 90);
+        lienzo.lineTo(60, 70);
+        lienzo.lineTo(113, -10);
+        lienzo.fill();
+
+        lienzo.beginPath();
+        lienzo.moveTo(130, 90);
+        lienzo.lineTo(160, 75);
+        lienzo.lineTo(170, -25);
+        lienzo.fill();
+
+        let texto = "I´m Batman!!";
+        const hablar = (texto) =>
+          speechSynthesis.speak(new SpeechSynthesisUtterance(texto));
+        hablar(texto);
+      }
+    </script>
+  </body>
+</html>
